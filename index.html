@@ -21,32 +21,40 @@
 				<a>Quem somos</a>
 				<a>Contato</a>
 			</nav>
-			<div class="contact">(11) 99999-9999</div>
+			<div class="contact">
+				<span class="contact-phone">(11) 99999-9999</span>
+				<span class="contact-label">Fale conosco</span>
+			</div>
 		</div>
 		<div class="header-line"></div>
 	</header>
 
 	<section class="hero">
 		<div class="hero-overlay"></div>
-		<div class="container hero-inner">
-			<div class="hero-left">
+		<div class="container hero-top">
+			<div class="hero-copy">
 				<h1>Seu próximo carro <strong>ESTÁ AQUI!</strong></h1>
 				<p class="lead">As melhores oportunidades em multimarcas com qualidade e confiança que você merece.</p>
 				<a class="btn btn-red">FALAR NO WHATSAPP</a>
 			</div>
-
+			<div class="hero-preview">
+				<div class="logo-badge">Qualidade <span>Procedência e Confiança</span></div>
+				<div class="hero-cars"></div>
+			</div>
+		</div>
+		<div class="container hero-search-wrap">
 			<div class="hero-search">
-				<h3>Encontre seu carro</h3>
-				<div class="search-outline">
-				<form class="search-form">
-					<select><option>Marca</option><option>Hyundai</option><option>Toyota</option></select>
-					<select><option>Modelo</option></select>
-					<select><option>Ano de</option></select>
-					<select><option>Até</option></select>
-					<select><option>Preço</option></select>
-					<button class="btn btn-outline-red">Buscar Veículos</button>
-				</form>
+				<div class="search-header">
+					<span class="search-label">Encontre seu carro</span>
 				</div>
+				<form class="search-form">
+					<div class="field"><select><option>Marca</option><option>Hyundai</option><option>Toyota</option></select></div>
+					<div class="field"><select><option>Modelo</option></select></div>
+					<div class="field"><select><option>Ano de</option></select></div>
+					<div class="field"><select><option>Até</option></select></div>
+					<div class="field"><select><option>Preço</option></select></div>
+					<button class="btn btn-red search-btn">BUSCAR VEÍCULOS</button>
+				</form>
 			</div>
 		</div>
 	</section>
@@ -54,86 +62,108 @@
 	<main class="container">
 		<section class="destaques">
 			<div class="section-header">
-				<h2>Destaques</h2>
+				<h2>DESTA<span>QUES</span></h2>
 				<a class="see-all">Ver todo estoque →</a>
 			</div>
 
-			<div class="cards">
+			<div class="cards-wrap">
 				<div class="carousel-arrow left">‹</div>
 				<div class="carousel-arrow right">›</div>
-				<!-- Card 1 -->
-				<article class="card">
-					<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&q=80')">
-						<div class="badge">2020</div>
-						<div class="tag">Único dono</div>
-					</div>
-					<div class="card-body">
-						<h4>JEEP COMPASS</h4>
-						<p class="specs">2.0 16V FLEX LIMITED AUTOMÁTICO • 45.000 km</p>
-						<div class="price">R$ 114.900,00</div>
-					</div>
-				</article>
+				<div class="cards">
+					<article class="card">
+						<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1542362567-b07e54358753?w=1200&q=80')">
+							<div class="badge">2020</div>
+							<div class="tag">Único dono</div>
+						</div>
+						<div class="card-body">
+							<h4>JEEP COMPASS</h4>
+							<p class="specs">2.0 16V FLEX LIMITED AUTOMÁTICO</p>
+							<div class="card-info">
+								<span>Automático</span>
+								<span>Flex</span>
+								<span>45.000 km</span>
+							</div>
+							<div class="price">R$ 114.900,00</div>
+						</div>
+					</article>
 
-				<!-- Card 2 -->
-				<article class="card">
-					<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1200&q=80')">
-						<div class="badge">2019</div>
-						<div class="tag">Único dono</div>
-					</div>
-					<div class="card-body">
-						<h4>TOYOTA COROLLA</h4>
-						<p class="specs">2.0 XEI 16V FLEX AUTOMÁTICO • 62.000 km</p>
-						<div class="price">R$ 98.900,00</div>
-					</div>
-				</article>
+					<article class="card">
+						<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=1200&q=80')">
+							<div class="badge">2019</div>
+							<div class="tag">Único dono</div>
+						</div>
+						<div class="card-body">
+							<h4>TOYOTA COROLLA</h4>
+							<p class="specs">2.0 XEI 16V FLEX AUTOMÁTICO</p>
+							<div class="card-info">
+								<span>Automático</span>
+								<span>Flex</span>
+								<span>62.000 km</span>
+							</div>
+							<div class="price">R$ 98.900,00</div>
+						</div>
+					</article>
 
-				<!-- Card 3 -->
-				<article class="card">
-					<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80')">
-						<div class="badge">2021</div>
-						<div class="tag">Único dono</div>
-					</div>
-					<div class="card-body">
-						<h4>VW T-CROSS</h4>
-						<p class="specs">200 TSI 1.0 FLEX AUTOMÁTICO • 38.000 km</p>
-						<div class="price">R$ 89.900,00</div>
-					</div>
-				</article>
+					<article class="card">
+						<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80')">
+							<div class="badge">2021</div>
+							<div class="tag">Único dono</div>
+						</div>
+						<div class="card-body">
+							<h4>VW T-CROSS</h4>
+							<p class="specs">200 TSI 1.0 FLEX AUTOMÁTICO</p>
+							<div class="card-info">
+								<span>Automático</span>
+								<span>Flex</span>
+								<span>38.000 km</span>
+							</div>
+							<div class="price">R$ 89.900,00</div>
+						</div>
+					</article>
 
-				<!-- Card 4 -->
-				<article class="card">
-					<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?w=1200&q=80')">
-						<div class="badge">2018</div>
-						<div class="tag">Único dono</div>
-					</div>
-					<div class="card-body">
-						<h4>HONDA HR-V</h4>
-						<p class="specs">1.8 16V FLEX EXL AUTOMÁTICO • 70.000 km</p>
-						<div class="price">R$ 84.900,00</div>
-					</div>
-				</article>
+					<article class="card">
+						<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?w=1200&q=80')">
+							<div class="badge">2018</div>
+							<div class="tag">Único dono</div>
+						</div>
+						<div class="card-body">
+							<h4>HONDA HR-V</h4>
+							<p class="specs">1.8 16V FLEX EXL AUTOMÁTICO</p>
+							<div class="card-info">
+								<span>Automático</span>
+								<span>Flex</span>
+								<span>70.000 km</span>
+							</div>
+							<div class="price">R$ 84.900,00</div>
+						</div>
+					</article>
 
-				<!-- Card 5 -->
-				<article class="card">
-					<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1511918984145-48de785d4c4b?w=1200&q=80')">
-						<div class="badge">2017</div>
-						<div class="tag">Único dono</div>
-					</div>
-					<div class="card-body">
-						<h4>CHEVROLET ONIX</h4>
-						<p class="specs">1.4 MPI LTZ 8V FLEX AUTOMÁTICO • 68.000 km</p>
-						<div class="price">R$ 59.900,00</div>
-					</div>
-				</article>
+					<article class="card">
+						<div class="card-image" style="background-image:url('https://images.unsplash.com/photo-1511918984145-48de785d4c4b?w=1200&q=80')">
+							<div class="badge">2017</div>
+							<div class="tag">Único dono</div>
+						</div>
+						<div class="card-body">
+							<h4>CHEVROLET ONIX</h4>
+							<p class="specs">1.4 MPI LTZ 8V FLEX AUTOMÁTICO</p>
+							<div class="card-info">
+								<span>Automático</span>
+								<span>Flex</span>
+								<span>68.000 km</span>
+							</div>
+							<div class="price">R$ 59.900,00</div>
+						</div>
+					</article>
+				</div>
 			</div>
 		</section>
 
 		<section class="highlights">
 			<div class="grid-4">
-				<div class="feature">Veículos selecionados</div>
-				<div class="feature">Financiamento facilitado</div>
-				<div class="feature">Garantia e segurança</div>
-				<div class="feature">Atendimento especializado</div>
+				<div class="feature"><strong>Veículos selecionados</strong><p>Só trabalhamos com carros de qualidade e procedência</p></div>
+				<div class="feature"><strong>Financiamento facilitado</strong><p>As melhores taxas e condições para você realizar seu sonho</p></div>
+				<div class="feature"><strong>Garantia e segurança</strong><p>Transparência em todo o processo para sua total segurança</p></div>
+				<div class="feature"><strong>Atendimento especializado</strong><p>Equipe pronta para te ajudar a fazer o melhor negócio</p></div>
 			</div>
 		</section>
 	</main>
