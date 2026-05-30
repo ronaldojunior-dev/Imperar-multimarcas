@@ -1,0 +1,78 @@
+:root{
+  --bg:#0b0b0b;
+  --panel:#0f0f10;
+  --muted:#bdbdbd;
+  --red:#d81b1b;
+  --gold:#dcae3a;
+  --container:1200px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#fff}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+.site-header{background:linear-gradient(#0a0a0a,#080808);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;gap:20px;padding:18px 0}
+.logo-wrap{display:flex;align-items:center}
+.logo-img{height:64px;display:block}
+.main-nav{display:flex;gap:18px;margin-left:30px}
+.main-nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.main-nav a.active{color:var(--red)}
+.contact{margin-left:auto;background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;color:var(--muted)}
+
+.hero{position:relative;padding:60px 0;background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=1600&q=80');background-size:cover;background-position:center}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 35%, rgba(0,0,0,0.8) 100%)}
+.hero-inner{position:relative;display:flex;gap:30px;align-items:center;padding:40px 0}
+.hero-left{flex:1;max-width:680px}
+.hero-left h1{font-size:56px;margin:0 0 10px;line-height:1.02;color:#fff}
+.hero-left h1 strong{color:var(--gold);font-weight:900;font-size:64px}
+.lead{color:var(--muted);margin-bottom:18px;max-width:520px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;text-decoration:none;color:#fff;font-weight:700}
+.btn-red{background:var(--red)}
+.btn-outline-red{background:transparent;border:2px solid rgba(216,27,27,0.15);color:#fff;padding:10px 16px;border-radius:8px}
+
+.hero-search{width:560px;background:transparent;padding:18px;border-radius:12px;border:2px solid rgba(220,174,58,0.18);box-shadow:0 6px 30px rgba(0,0,0,0.6);backdrop-filter:blur(4px)}
+.hero-search h3{margin:0 0 12px;color:var(--gold)}
+.search-form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.search-form select{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;color:var(--muted);border-radius:8px}
+.search-form .btn-outline-red{grid-column:span 3;background:var(--red);border:none}
+
+.destaques{padding:40px 0}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.section-header h2{color:#fff;margin:0}
+.see-all{color:var(--muted);text-decoration:none}
+
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.card{background:#0b0b0b;border-radius:10px;overflow:hidden;border:2px solid rgba(220,174,58,0.08)}
+.card:hover{transform:translateY(-6px);transition:all .18s ease}
+.card-image{height:150px;background-size:cover;background-position:center;position:relative}
+.badge{position:absolute;left:10px;top:10px;background:rgba(0,0,0,0.6);padding:6px 8px;border-radius:6px;font-weight:700}
+.tag{position:absolute;right:10px;top:10px;background:var(--red);padding:6px 8px;border-radius:6px;font-size:12px}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;color:#fff;border:2px solid rgba(255,255,255,0.03)}
+.carousel-arrow.left{left:10px}
+.carousel-arrow.right{right:10px}
+.search-outline{border:2px solid rgba(220,174,58,0.9);padding:12px;border-radius:12px}
+.card-body{padding:12px}
+.card-body h4{margin:0 0 6px;font-size:15px}
+.specs{color:var(--muted);font-size:13px;margin:0 0 10px}
+.price{color:var(--red);font-weight:800;font-size:16px}
+
+.highlights{padding:30px 0}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.feature{background:rgba(255,255,255,0.02);padding:18px;border-radius:8px;text-align:center;color:var(--muted)}
+
+.site-footer{background:#070707;padding:20px 0;margin-top:30px}
+.footer-cta{display:flex;align-items:center;gap:20px}
+.cta-text{flex:1;color:var(--muted);font-weight:700}
+.btn-yellow{background:var(--gold);color:#000}
+
+/* Responsivo */
+@media (max-width:1100px){
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .hero-search{display:none}
+}
+@media (max-width:700px){
+  .cards{grid-template-columns:repeat(1,1fr)}
+  .main-nav{display:none}
+  .hero-left h1{font-size:28px}
+  .grid-4{grid-template-columns:1fr}
+}
