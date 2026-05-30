@@ -1,0 +1,746 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #020202;
+  --line: #d79b00;
+  --gold: #f3bd25;
+  --red: #ed1117;
+  --text: #f7f7f7;
+  --muted: #cfcfcf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(170, 0, 0, .16), transparent 24rem),
+    linear-gradient(180deg, #050505 0%, #000 54%, #060606 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 260px 1fr 250px;
+  align-items: center;
+  min-height: 96px;
+  padding: 0 64px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(0, 0, 0, .94);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .55);
+}
+
+.logo {
+  display: grid;
+  place-items: center start;
+  color: var(--red);
+  font-size: 31px;
+  font-style: italic;
+  font-weight: 950;
+  line-height: .9;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+}
+
+.main-nav a {
+  position: relative;
+  padding: 35px 0 32px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition: color .22s ease;
+}
+
+.main-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 23px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--red);
+  transform: scaleX(0);
+  transition: transform .22s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--red);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: scaleX(1);
+}
+
+.phone-link,
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 50px;
+  padding: 8px 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(7, 7, 7, .88);
+}
+
+.phone-link strong,
+.phone-link small {
+  display: block;
+}
+
+.phone-link small {
+  color: #f1f1f1;
+  font-size: 12px;
+}
+
+.whatsapp-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.hero {
+  position: relative;
+  min-height: 390px;
+  padding: 64px 64px 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, .96) 24%, rgba(0, 0, 0, .45) 66%, rgba(0, 0, 0, .85) 100%),
+    radial-gradient(circle at 73% 4%, rgba(242, 0, 0, .65), transparent 25rem),
+    linear-gradient(125deg, #070707, #111 35%, #030303);
+}
+
+.hero::before {
+  position: absolute;
+  right: -8%;
+  top: 70px;
+  width: 75%;
+  height: 4px;
+  content: "";
+  background: linear-gradient(90deg, transparent, #ff1019 20%, #fff 32%, #ff1118 46%, transparent);
+  box-shadow: 0 0 18px #ff1019;
+  transform: rotate(-7deg);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 3;
+  max-width: 410px;
+}
+
+.hero-copy p:first-child,
+.section-heading h2,
+.sell-banner h2 {
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.hero-copy p:first-child {
+  margin: 0 0 4px;
+  font-size: 31px;
+  font-weight: 900;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  color: var(--gold);
+  font-size: clamp(3rem, 5vw, 4.55rem);
+  line-height: .9;
+  font-style: italic;
+  font-weight: 950;
+  text-transform: uppercase;
+  text-shadow: 0 7px 0 rgba(114, 74, 0, .42);
+}
+
+.hero-copy .red-line {
+  display: block;
+  width: 82px;
+  height: 4px;
+  margin: 15px 0 12px;
+  background: var(--red);
+}
+
+.hero-text {
+  max-width: 350px;
+  margin: 0 0 23px;
+  color: #f2f2f2;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.primary-button,
+.sell-banner a,
+.danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 25px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #fb1d22, #c50008);
+  box-shadow: 0 12px 24px rgba(170, 0, 0, .34);
+  cursor: pointer;
+}
+
+.hero-cars {
+  position: absolute;
+  right: 72px;
+  bottom: 24px;
+  left: 430px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 18px;
+}
+
+.hero-cars img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: saturate(1.05) contrast(1.13) drop-shadow(0 24px 28px rgba(0, 0, 0, .85));
+}
+
+.hero-cars img:nth-child(2) {
+  height: 280px;
+}
+
+.quality-badge {
+  position: absolute;
+  top: 34px;
+  right: 68px;
+  z-index: 4;
+  width: 126px;
+  min-height: 136px;
+  padding: 21px 10px 12px;
+  clip-path: polygon(50% 0, 100% 13%, 100% 66%, 50% 100%, 0 66%, 0 13%);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #151515, #060606);
+  border: 4px solid var(--gold);
+}
+
+.search-panel,
+.admin-card,
+.vehicle-card,
+.form-card {
+  border: 1px solid #555;
+  background: rgba(7, 7, 7, .94);
+}
+
+.search-panel {
+  position: relative;
+  z-index: 8;
+  display: grid;
+  grid-template-columns: 230px repeat(5, minmax(130px, 1fr)) 210px;
+  gap: 20px;
+  align-items: center;
+  width: calc(100% - 128px);
+  margin: -1px auto 25px;
+  padding: 16px 22px;
+  border-color: var(--line);
+  border-radius: 9px;
+}
+
+.search-title {
+  color: var(--red);
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.field,
+.search-panel label {
+  display: grid;
+  gap: 6px;
+  color: #dfdfdf;
+  font-size: 12px;
+}
+
+.search-panel label {
+  min-height: 52px;
+  padding: 8px 13px 7px;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  background: #090909;
+}
+
+.field input,
+.field select,
+.field textarea,
+.search-panel select {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid #353535;
+  border-radius: 5px;
+  color: #fff;
+  background: #090909;
+  padding: 9px 11px;
+  outline: 0;
+}
+
+.search-panel select {
+  min-height: 0;
+  border: 0;
+  padding: 0;
+}
+
+.search-panel button {
+  min-height: 50px;
+}
+
+.featured,
+.content-shell {
+  margin: 0 auto;
+  width: calc(100% - 128px);
+  max-width: 1500px;
+}
+
+.featured {
+  position: relative;
+  padding: 0 22px 18px;
+  border-right: 1px solid #333;
+  border-left: 1px solid #333;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.section-heading h2 {
+  position: relative;
+  margin: 0;
+  font-size: 29px;
+  line-height: 1;
+  font-weight: 950;
+}
+
+.section-heading h2::after {
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  width: 96px;
+  height: 4px;
+  content: "";
+  background: var(--red);
+}
+
+.section-heading h2 span,
+.benefits em {
+  color: var(--red);
+}
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.vehicle-card {
+  overflow: hidden;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #161616 0%, #050505 76%);
+  box-shadow: 0 15px 28px rgba(0, 0, 0, .42);
+}
+
+.vehicle-image {
+  position: relative;
+  height: 165px;
+  overflow: hidden;
+}
+
+.vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag {
+  display: inline-flex;
+  border-radius: 5px;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #e0181d, #b60006);
+}
+
+.vehicle-card .year {
+  position: absolute;
+  top: 8px;
+  left: 9px;
+  background: #101010;
+  border: 1px solid var(--red);
+}
+
+.vehicle-card .owner {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+
+.vehicle-card h3,
+.vehicle-card p,
+.vehicle-card ul,
+.vehicle-card strong {
+  margin-right: 14px;
+  margin-left: 14px;
+}
+
+.vehicle-card h3 {
+  margin-top: 11px;
+  margin-bottom: 2px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.vehicle-card p,
+.vehicle-card li,
+.muted {
+  color: #d7d7d7;
+}
+
+.vehicle-card p {
+  margin-top: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.vehicle-card ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0;
+  font-size: 12px;
+  list-style: none;
+}
+
+.vehicle-card strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--red);
+  font-size: 22px;
+  text-align: center;
+}
+
+.benefits,
+.sell-banner,
+.admin-grid {
+  display: grid;
+}
+
+.benefits {
+  grid-template-columns: repeat(4, 1fr);
+  margin: 16px auto 0;
+  width: calc(100% - 128px);
+  padding: 13px 28px;
+  border: 1px solid #555;
+  border-radius: 7px;
+  background: rgba(7, 7, 7, .93);
+}
+
+.benefits article {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  align-items: center;
+  min-height: 88px;
+  padding: 0 24px;
+  border-right: 1px solid #333;
+}
+
+.benefits article:last-child {
+  border-right: 0;
+}
+
+.benefits article > span {
+  color: var(--line);
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.benefits h3 {
+  margin: 0 0 9px;
+  font-size: 18px;
+  line-height: 1;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.benefits p {
+  margin: 0;
+  color: #d7d7d7;
+  font-size: 12px;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.sell-banner {
+  grid-template-columns: 1.2fr 1fr 330px;
+  align-items: center;
+  gap: 34px;
+  min-height: 100px;
+  margin-top: 10px;
+  padding: 18px 12vw;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(90deg, #8e0000, #f21818 48%, #8c0000);
+}
+
+.sell-banner h2 {
+  margin: 0;
+  font-size: 27px;
+}
+
+.sell-banner p {
+  margin: 0;
+  padding-left: 40px;
+  border-left: 1px solid rgba(255, 255, 255, .35);
+  font-size: 17px;
+}
+
+.sell-banner a {
+  border: 1px solid var(--line);
+  color: var(--gold);
+  background: #050505;
+  box-shadow: none;
+}
+
+.page-title {
+  margin: 40px 0 24px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 28px;
+}
+
+.gallery {
+  display: grid;
+  gap: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.form-card,
+.admin-card {
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  padding: 28px 22px;
+  border-right: 1px solid #333;
+  background: #050505;
+}
+
+.admin-sidebar nav {
+  display: grid;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.admin-sidebar a,
+.admin-sidebar button {
+  padding: 12px;
+  border: 1px solid #2d2d2d;
+  border-radius: 6px;
+  color: #fff;
+  text-align: left;
+  background: #101010;
+}
+
+.admin-main {
+  padding: 32px;
+}
+
+.admin-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+
+.admin-card strong {
+  display: block;
+  color: var(--red);
+  font-size: 30px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid #303030;
+  padding: 12px;
+  text-align: left;
+}
+
+.login-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 24px;
+}
+
+.login-page form {
+  width: min(430px, 100%);
+}
+
+@media (max-width: 1080px) {
+  .site-header,
+  .search-panel,
+  .sell-banner,
+  .detail-grid,
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    position: relative;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-cars {
+    position: static;
+    margin-top: 28px;
+  }
+
+  .quality-badge {
+    display: none;
+  }
+
+  .featured,
+  .content-shell,
+  .search-panel,
+  .benefits {
+    width: calc(100% - 32px);
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits article {
+    border-right: 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .sell-banner {
+    padding: 22px;
+    text-align: center;
+  }
+
+  .sell-banner p {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .admin-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #333;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-grid,
+  .hero-cars {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cars img,
+  .hero-cars img:nth-child(2),
+  .gallery img {
+    height: 240px;
+  }
+}
