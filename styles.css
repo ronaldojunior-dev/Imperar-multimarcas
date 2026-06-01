@@ -42,7 +42,7 @@ select {
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: 260px 1fr 250px;
+  grid-template-columns: 260px 1fr;
   align-items: center;
   min-height: 112px;
   padding: 0 64px;
@@ -67,7 +67,7 @@ select {
 .main-nav {
   display: flex;
   justify-content: center;
-  gap: 42px;
+  gap: 36px;
 }
 
 .main-nav a {
@@ -94,6 +94,21 @@ select {
 .main-nav a:hover,
 .main-nav a.active {
   color: var(--red);
+}
+
+.main-nav a.nav-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+}
+
+.main-nav a.nav-whatsapp:hover {
+  color: #25d366;
+}
+
+.main-nav a.nav-whatsapp::after {
+  background: #25d366;
 }
 
 .main-nav a:hover::after,
@@ -806,15 +821,14 @@ select {
 .whatsapp-float {
   position: fixed;
   right: 24px;
-  bottom: 8px;
+  bottom: 46px;
   z-index: 50;
   display: block;
   width: 340px;
   border-radius: 999px;
   filter:
-    drop-shadow(0 12px 26px rgba(0, 0, 0, .42))
-    drop-shadow(0 0 12px rgba(255, 255, 255, .86))
-    drop-shadow(0 0 26px rgba(255, 255, 255, .45));
+    drop-shadow(0 10px 20px rgba(0, 0, 0, .32))
+    drop-shadow(0 0 5px rgba(255, 255, 255, .34));
   transition: background .2s ease, transform .2s ease;
 }
 
@@ -827,15 +841,14 @@ select {
 
 .whatsapp-float:hover {
   filter:
-    drop-shadow(0 16px 30px rgba(0, 0, 0, .48))
-    drop-shadow(0 0 16px rgba(255, 255, 255, .95))
-    drop-shadow(0 0 34px rgba(255, 255, 255, .58));
-  transform: translateY(-4px);
+    drop-shadow(0 12px 22px rgba(0, 0, 0, .36))
+    drop-shadow(0 0 7px rgba(255, 255, 255, .42));
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1280px) {
   .site-header {
-    grid-template-columns: 220px 1fr 220px;
+    grid-template-columns: 220px 1fr;
     padding: 0 32px;
   }
 
@@ -924,6 +937,10 @@ select {
     border-bottom: 1px solid #202020;
   }
 
+  .main-nav a.nav-whatsapp {
+    justify-content: flex-start;
+  }
+
   .main-nav a:last-child {
     border-bottom: 0;
   }
@@ -932,11 +949,6 @@ select {
     right: 16px;
     bottom: 8px;
     left: 16px;
-  }
-
-  .phone-link {
-    grid-column: 1 / -1;
-    justify-self: center;
   }
 
   .hero {
@@ -1058,7 +1070,7 @@ select {
 
   .site-footer {
     margin-top: 28px;
-    padding: 22px 18px 86px;
+    padding: 22px 18px 110px;
   }
 
   .footer-social a {
@@ -1067,7 +1079,7 @@ select {
 
   .whatsapp-float {
     right: 16px;
-    bottom: 6px;
+    bottom: 42px;
     width: 250px;
   }
 
