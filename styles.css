@@ -821,7 +821,7 @@ select {
 .whatsapp-float {
   position: fixed;
   right: 24px;
-  bottom: 46px;
+  bottom: 15px;
   z-index: 50;
   display: block;
   width: 340px;
@@ -1070,7 +1070,7 @@ select {
 
   .site-footer {
     margin-top: 28px;
-    padding: 22px 18px 110px;
+    padding: 22px 18px 86px;
   }
 
   .footer-social a {
@@ -1079,7 +1079,7 @@ select {
 
   .whatsapp-float {
     right: 16px;
-    bottom: 42px;
+    bottom: 15px;
     width: 250px;
   }
 
