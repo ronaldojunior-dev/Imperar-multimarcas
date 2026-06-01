@@ -7,14 +7,21 @@
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="home">
   <header class="site-header">
-    <a class="logo" href="#" aria-label="Imperar Multimarcas">
+    <a class="logo" href="#home" aria-label="Voltar para a home">
       <img src="assets/logo.png" alt="Imperar Multimarcas">
     </a>
 
+    <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Abrir menu">
+    <label class="menu-toggle" for="nav-toggle" aria-label="Abrir ou fechar menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
     <nav class="main-nav" aria-label="Menu principal">
-      <a class="active" href="#">Home</a>
+      <a class="active" href="#home">Home</a>
       <a href="#estoque">Estoque</a>
       <a href="#venda">Vender seu carro</a>
       <a href="#financiamento">Financiamento</a>
@@ -288,5 +295,14 @@
   <a class="whatsapp-float" href="https://wa.me/5548992125373" target="_blank" rel="noreferrer" aria-label="Abrir conversa no WhatsApp">
     <img src="assets/whatsapp.png" alt="">
   </a>
+
+  <script>
+    document.querySelectorAll(".main-nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        const toggle = document.getElementById("nav-toggle");
+        if (toggle) toggle.checked = false;
+      });
+    });
+  </script>
 </body>
 </html>

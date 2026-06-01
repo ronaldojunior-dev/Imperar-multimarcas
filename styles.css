@@ -101,6 +101,45 @@ select {
   transform: scaleX(1);
 }
 
+.nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(7, 7, 7, .88);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px 0;
+  border-radius: 999px;
+  background: #fff;
+  transition: transform .24s ease, opacity .18s ease, background .2s ease;
+}
+
+.menu-toggle:hover span {
+  background: var(--gold);
+}
+
+.nav-toggle:focus-visible + .menu-toggle {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
 .phone-link {
   display: flex;
   align-items: center;
@@ -827,30 +866,71 @@ select {
 
 @media (max-width: 900px) {
   .site-header {
-    position: relative;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 12px 20px 18px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px 14px;
+    padding: 10px 18px 16px;
   }
 
   .logo {
-    margin: 0 auto;
+    width: 210px;
+    height: 92px;
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  .nav-toggle:checked + .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-toggle:checked + .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked + .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .main-nav {
-    flex-wrap: wrap;
-    gap: 8px 18px;
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    border: 0 solid rgba(215, 155, 0, .4);
+    border-radius: 8px;
+    opacity: 0;
+    background: rgba(5, 5, 5, .96);
+    transform: translateY(-8px);
+    transition: max-height .28s ease, opacity .22s ease, transform .28s ease, padding .28s ease, border-width .28s ease;
+  }
+
+  .nav-toggle:checked ~ .main-nav {
+    max-height: 340px;
+    padding: 8px 0;
+    border-width: 1px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .main-nav a {
-    padding: 7px 0;
+    padding: 13px 16px;
+    border-bottom: 1px solid #202020;
+  }
+
+  .main-nav a:last-child {
+    border-bottom: 0;
   }
 
   .main-nav a::after {
-    bottom: 0;
+    right: 16px;
+    bottom: 8px;
+    left: 16px;
   }
 
   .phone-link {
+    grid-column: 1 / -1;
     justify-self: center;
   }
 
