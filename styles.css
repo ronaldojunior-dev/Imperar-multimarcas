@@ -152,33 +152,6 @@ select {
   background: rgba(7, 7, 7, .88);
 }
 
-.whatsapp-button {
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.whatsapp-button img {
-  display: block;
-  width: 215px;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .35));
-  transition: transform .2s ease, filter .2s ease;
-}
-
-.whatsapp-button:hover {
-  filter: none;
-  transform: none;
-}
-
-.whatsapp-button:hover img {
-  filter: drop-shadow(0 13px 22px rgba(0, 0, 0, .45)) brightness(1.04);
-  transform: translateY(-2px);
-}
-
 .phone-link strong,
 .phone-link small {
   display: block;
@@ -834,7 +807,7 @@ select {
   bottom: 28px;
   z-index: 50;
   display: block;
-  width: 210px;
+  width: 340px;
   border-radius: 999px;
   filter: drop-shadow(0 12px 26px rgba(0, 0, 0, .42));
   transition: background .2s ease, transform .2s ease;
@@ -849,26 +822,6 @@ select {
 
 .whatsapp-float:hover {
   transform: translateY(-2px);
-}
-
-.phone-link.whatsapp-button,
-.primary-button.whatsapp-button,
-.sell-banner a.whatsapp-button,
-.footer-social a.whatsapp-button {
-  min-height: 0;
-  padding: 0;
-  border: 0;
-  color: inherit;
-  background: transparent;
-  box-shadow: none;
-}
-
-.phone-link.whatsapp-button {
-  justify-self: end;
-}
-
-.footer-social a.whatsapp-button {
-  width: 215px;
 }
 
 @media (max-width: 1280px) {
@@ -1106,7 +1059,7 @@ select {
   .whatsapp-float {
     right: 16px;
     bottom: 16px;
-    width: 170px;
+    width: 250px;
   }
 
   .whatsapp-float img {
