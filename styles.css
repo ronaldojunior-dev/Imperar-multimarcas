@@ -669,6 +669,134 @@ select {
   box-shadow: none;
 }
 
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr .9fr;
+  gap: 30px;
+  width: calc(100% - 128px);
+  max-width: 1500px;
+  margin: 34px auto 0;
+  padding: 32px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(10, 10, 10, .98), rgba(0, 0, 0, .98));
+}
+
+.footer-brand strong {
+  display: block;
+  color: var(--red);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 950;
+  line-height: .95;
+  text-transform: uppercase;
+}
+
+.footer-brand strong span {
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+.footer-brand p,
+.footer-store p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.footer-section h2 {
+  margin: 0 0 16px;
+  color: var(--gold);
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.footer-stores {
+  display: grid;
+  gap: 14px;
+}
+
+.footer-store,
+.footer-social a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-store > span,
+.footer-social span {
+  flex: 0 0 auto;
+  color: var(--gold);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.footer-store strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+.footer-store a,
+.footer-social a {
+  color: #fff;
+  font-weight: 800;
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.footer-store a {
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--gold);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.footer-store a:hover,
+.footer-social a:hover {
+  color: var(--red);
+}
+
+.footer-social {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.footer-social a {
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #333;
+  border-radius: 7px;
+  background: rgba(9, 9, 9, .92);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 900;
+  background: #25d366;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .42), 0 0 0 4px rgba(37, 211, 102, .18);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.whatsapp-float:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 1280px) {
   .site-header {
     grid-template-columns: 220px 1fr 220px;
@@ -770,8 +898,14 @@ select {
 
   .vehicle-grid,
   .benefits,
-  .sell-banner {
+  .sell-banner,
+  .site-footer {
     grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    width: calc(100% - 32px);
+    padding: 24px;
   }
 
   .benefits article {
@@ -843,5 +977,22 @@ select {
   .benefits article {
     grid-template-columns: 54px 1fr;
     padding: 10px;
+  }
+
+  .site-footer {
+    margin-top: 28px;
+    padding: 22px 18px 86px;
+  }
+
+  .footer-social a {
+    width: 100%;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    height: 54px;
+    font-size: 27px;
   }
 }
