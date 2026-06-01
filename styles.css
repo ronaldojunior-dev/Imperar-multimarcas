@@ -824,7 +824,9 @@ select {
   bottom: 15px;
   z-index: 50;
   display: block;
-  width: 340px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
   border-radius: 999px;
   filter:
     drop-shadow(0 10px 20px rgba(0, 0, 0, .32))
@@ -834,8 +836,8 @@ select {
 
 .whatsapp-float img {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -1080,11 +1082,12 @@ select {
   .whatsapp-float {
     right: 16px;
     bottom: 15px;
-    width: 250px;
+    width: 54px;
+    height: 54px;
   }
 
   .whatsapp-float img {
-    width: 100%;
-    height: auto;
+    width: 54px;
+    height: 54px;
   }
 }
