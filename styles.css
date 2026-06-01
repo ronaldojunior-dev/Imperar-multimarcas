@@ -44,7 +44,7 @@ select {
   display: grid;
   grid-template-columns: 260px 1fr 250px;
   align-items: center;
-  min-height: 96px;
+  min-height: 112px;
   padding: 0 64px;
   border-bottom: 1px solid var(--line);
   background: rgba(0, 0, 0, .94);
@@ -52,16 +52,15 @@ select {
 }
 
 .logo {
-  display: block;
-  width: 230px;
-  height: 90px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 240px;
+  height: 104px;
 }
 
 .logo img {
-  width: 260px;
-  height: 174px;
-  margin: -40px 0 0 -22px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -131,15 +130,9 @@ select {
 }
 
 .whatsapp-icon {
-  display: inline-grid;
-  place-items: center;
   width: 24px;
   height: 24px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  color: var(--gold);
-  font-size: 13px;
-  font-weight: 900;
+  object-fit: contain;
 }
 
 .hero {
@@ -681,21 +674,12 @@ select {
   background: linear-gradient(180deg, rgba(10, 10, 10, .98), rgba(0, 0, 0, .98));
 }
 
-.footer-brand strong {
+.footer-brand img {
   display: block;
-  color: var(--red);
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 950;
-  line-height: .95;
-  text-transform: uppercase;
-}
-
-.footer-brand strong span {
-  display: block;
-  color: #fff;
-  font-size: 12px;
-  letter-spacing: 4px;
+  width: min(300px, 100%);
+  height: auto;
+  margin: -30px 0 -18px;
+  object-fit: contain;
 }
 
 .footer-brand p,
@@ -725,12 +709,16 @@ select {
   gap: 12px;
 }
 
-.footer-store > span,
-.footer-social span {
+.footer-icon {
   flex: 0 0 auto;
-  color: var(--gold);
-  font-size: 22px;
-  line-height: 1;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.footer-store .footer-icon {
+  width: 26px;
+  height: 26px;
 }
 
 .footer-store strong {
@@ -783,13 +771,17 @@ select {
   place-items: center;
   width: 60px;
   height: 60px;
+  overflow: hidden;
   border-radius: 999px;
-  color: #fff;
-  font-size: 30px;
-  font-weight: 900;
   background: #25d366;
   box-shadow: 0 12px 26px rgba(0, 0, 0, .42), 0 0 0 4px rgba(37, 211, 102, .18);
   transition: background .2s ease, transform .2s ease;
+}
+
+.whatsapp-float img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .whatsapp-float:hover {
@@ -993,6 +985,10 @@ select {
     bottom: 16px;
     width: 54px;
     height: 54px;
-    font-size: 27px;
+  }
+
+  .whatsapp-float img {
+    width: 54px;
+    height: 54px;
   }
 }
