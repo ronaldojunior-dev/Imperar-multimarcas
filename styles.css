@@ -37,6 +37,35 @@ select {
   font: inherit;
 }
 
+select,
+input,
+textarea {
+  border: 1px solid var(--line);
+  color: #fff;
+  background: #050505;
+  color-scheme: dark;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  border-color: var(--gold);
+  outline: 2px solid rgba(243, 189, 37, .28);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(237, 17, 23, .16);
+}
+
+select option,
+select optgroup {
+  color: #fff;
+  background: #050505;
+}
+
+select option:checked {
+  color: #050505;
+  background: var(--gold);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -415,15 +444,46 @@ select {
   color: #dfdfdf;
   font-size: 12px;
   background: #090909;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.search-panel label:hover,
+.search-panel label:focus-within {
+  border-color: var(--line);
+  background: #050505;
+  box-shadow: 0 0 0 2px rgba(215, 155, 0, .16), inset 0 0 0 1px rgba(237, 17, 23, .18);
 }
 
 .search-panel select {
   width: 100%;
+  min-height: 28px;
   border: 0;
+  border-radius: 3px;
   color: #fff;
   font-size: 13px;
-  background: transparent;
+  background: #050505;
   outline: 0;
+  cursor: pointer;
+}
+
+.search-panel select:hover {
+  color: var(--gold);
+}
+
+.search-panel select:focus {
+  color: #fff;
+  outline: 0;
+  box-shadow: none;
+}
+
+.search-panel select option {
+  color: #fff;
+  background: #050505;
+}
+
+.search-panel select option:checked {
+  color: #050505;
+  background: var(--gold);
 }
 
 .search-panel button {
