@@ -811,11 +811,10 @@ select {
 
 .footer-social a {
   align-items: center;
-  min-height: 44px;
-  padding: 10px 12px;
-  border: 1px solid #333;
-  border-radius: 7px;
-  background: rgba(9, 9, 9, .92);
+  min-height: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .whatsapp-float {
