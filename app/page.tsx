@@ -1,25 +1,24 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { PublicHeader } from "@/components/PublicHeader";
+import { PublicFooter } from "@/components/PublicFooter";
 import { VehicleCard } from "@/components/VehicleCard";
+import { whatsappUrl } from "@/lib/company";
 
 export const revalidate = 60;
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  const [settings, vehicles] = await Promise.all([
-    prisma.settings.findFirst(),
-    prisma.vehicle.findMany({
-      where: { featured: true, status: { in: ["ATIVO", "RESERVADO"] } },
-      include: { images: { orderBy: { order: "asc" } } },
-      orderBy: { createdAt: "desc" },
-      take: 5
-    })
-  ]);
+  const vehicles = await prisma.vehicle.findMany({
+    where: { featured: true, status: { in: ["ATIVO", "RESERVADO"] } },
+    include: { images: { orderBy: { order: "asc" } } },
+    orderBy: { createdAt: "desc" },
+    take: 5
+  });
 
   return (
     <>
-      <PublicHeader phone={settings?.phone} whatsapp={settings?.whatsapp} />
+      <PublicHeader />
       <main>
         <section className="hero">
           <div className="hero-copy">
@@ -27,7 +26,7 @@ export default async function HomePage() {
             <h1>Está aqui!</h1>
             <span className="red-line" />
             <p className="hero-text">As melhores oportunidades em multimarcas com qualidade e confiança que você merece.</p>
-            <a className="primary-button" href={`https://wa.me/${settings?.whatsapp ?? "5511999999999"}`}>
+            <a className="primary-button" href={whatsappUrl()} target="_blank" rel="noreferrer">
               <span className="whatsapp-icon" aria-hidden="true">☎</span>
               Falar no WhatsApp
             </a>
@@ -76,6 +75,7 @@ export default async function HomePage() {
           <Link href="/vender-meu-carro">Quero vender meu carro</Link>
         </section>
       </main>
+      <PublicFooter />
     </>
   );
 }

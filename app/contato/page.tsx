@@ -1,21 +1,22 @@
 import { PublicHeader } from "@/components/PublicHeader";
+import { PublicFooter } from "@/components/PublicFooter";
 import { LeadForm } from "@/components/LeadForm";
-import { prisma } from "@/lib/prisma";
+import { STORES } from "@/lib/company";
 
 export const dynamic = "force-dynamic";
 
 export default async function ContactPage() {
-  const settings = await prisma.settings.findFirst();
   return (
     <>
-      <PublicHeader phone={settings?.phone} whatsapp={settings?.whatsapp} />
+      <PublicHeader />
       <main className="content-shell">
         <div className="page-title">
           <h1>Contato</h1>
-          <p className="muted">{settings?.address}</p>
+          <p className="muted">{STORES.map((store) => `${store.name}: ${store.address}`).join(" | ")}</p>
         </div>
         <LeadForm />
       </main>
+      <PublicFooter />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { WHATSAPP_DISPLAY, whatsappUrl } from "@/lib/company";
 
-export function PublicHeader({ whatsapp = "5511999999999", phone = "(11) 99999-9999" }: { whatsapp?: string; phone?: string }) {
+export function PublicHeader(_props: { whatsapp?: string; phone?: string } = {}) {
   return (
     <header className="site-header">
       <Link className="logo" href="/">
@@ -16,10 +17,10 @@ export function PublicHeader({ whatsapp = "5511999999999", phone = "(11) 99999-9
         <Link href="/contato">Contato</Link>
       </nav>
 
-      <a className="phone-link" href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer">
+      <a className="phone-link" href={whatsappUrl()} target="_blank" rel="noreferrer">
         <span className="whatsapp-icon" aria-hidden="true">☎</span>
         <span>
-          <strong>{phone}</strong>
+          <strong>{WHATSAPP_DISPLAY}</strong>
           <small>Fale conosco</small>
         </span>
       </a>

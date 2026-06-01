@@ -1,14 +1,13 @@
 import { PublicHeader } from "@/components/PublicHeader";
+import { PublicFooter } from "@/components/PublicFooter";
 import { FinanceSimulator } from "@/components/FinanceSimulator";
-import { prisma } from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
 export default async function FinancingPage() {
-  const settings = await prisma.settings.findFirst();
   return (
     <>
-      <PublicHeader phone={settings?.phone} whatsapp={settings?.whatsapp} />
+      <PublicHeader />
       <main className="content-shell">
         <div className="page-title">
           <h1>Financiamento</h1>
@@ -16,6 +15,7 @@ export default async function FinancingPage() {
         </div>
         <FinanceSimulator />
       </main>
+      <PublicFooter />
     </>
   );
 }

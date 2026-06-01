@@ -2,20 +2,19 @@ import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { PublicHeader } from "@/components/PublicHeader";
+import { PublicFooter } from "@/components/PublicFooter";
 import { LeadForm } from "@/components/LeadForm";
 import { FinanceSimulator } from "@/components/FinanceSimulator";
+import { whatsappUrl } from "@/lib/company";
 
 export const dynamic = "force-dynamic";
 
 export default async function VehicleDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [settings, vehicle] = await Promise.all([
-    prisma.settings.findFirst(),
-    prisma.vehicle.findUnique({
-      where: { slug },
-      include: { images: { orderBy: { order: "asc" } } }
-    })
-  ]);
+  const vehicle = await prisma.vehicle.findUnique({
+    where: { slug },
+    include: { images: { orderBy: { order: "asc" } } }
+  });
 
   if (!vehicle) notFound();
 
@@ -32,7 +31,7 @@ export default async function VehicleDetailPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <PublicHeader phone={settings?.phone} whatsapp={settings?.whatsapp} />
+      <PublicHeader />
       <main className="content-shell">
         <div className="page-title">
           <h1>{vehicle.brand} {vehicle.model}</h1>
@@ -46,7 +45,7 @@ export default async function VehicleDetailPage({ params }: { params: Promise<{ 
             <h2>{price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</h2>
             <p>{vehicle.description}</p>
             <p className="muted">{vehicle.year} | {vehicle.mileage.toLocaleString("pt-BR")} km | {vehicle.fuel} | {vehicle.transmission}</p>
-            <a className="primary-button full" href={`https://wa.me/${settings?.whatsapp}?text=Tenho interesse no ${vehicle.brand} ${vehicle.model}`}>Enviar WhatsApp</a>
+            <a className="primary-button full" href={whatsappUrl(`Tenho interesse no ${vehicle.brand} ${vehicle.model}`)} target="_blank" rel="noreferrer">Enviar WhatsApp</a>
           </aside>
         </section>
         <section className="detail-grid" style={{ marginTop: 24 }}>
@@ -54,6 +53,7 @@ export default async function VehicleDetailPage({ params }: { params: Promise<{ 
           <FinanceSimulator vehicleId={vehicle.id} price={price} />
         </section>
       </main>
+      <PublicFooter />
     </>
   );
 }

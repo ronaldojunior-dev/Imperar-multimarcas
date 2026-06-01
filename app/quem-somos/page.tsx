@@ -1,19 +1,19 @@
 import { PublicHeader } from "@/components/PublicHeader";
-import { prisma } from "@/lib/prisma";
+import { PublicFooter } from "@/components/PublicFooter";
 
 export const dynamic = "force-dynamic";
 
 export default async function AboutPage() {
-  const settings = await prisma.settings.findFirst();
   return (
     <>
-      <PublicHeader phone={settings?.phone} whatsapp={settings?.whatsapp} />
+      <PublicHeader />
       <main className="content-shell">
         <div className="page-title">
           <h1>Quem somos</h1>
           <p className="muted">A Imperar Multimarcas trabalha com veículos selecionados, laudo de procedência, financiamento e atendimento consultivo.</p>
         </div>
       </main>
+      <PublicFooter />
     </>
   );
 }

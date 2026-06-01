@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { PublicHeader } from "@/components/PublicHeader";
+import { PublicFooter } from "@/components/PublicFooter";
 import { VehicleCard } from "@/components/VehicleCard";
 
 export const revalidate = 60;
@@ -7,7 +8,6 @@ export const dynamic = "force-dynamic";
 
 export default async function EstoquePage({ searchParams }: { searchParams: Promise<{ q?: string; brand?: string }> }) {
   const filters = await searchParams;
-  const settings = await prisma.settings.findFirst();
   const vehicles = await prisma.vehicle.findMany({
     where: {
       status: { in: ["ATIVO", "RESERVADO"] },
@@ -27,7 +27,7 @@ export default async function EstoquePage({ searchParams }: { searchParams: Prom
 
   return (
     <>
-      <PublicHeader phone={settings?.phone} whatsapp={settings?.whatsapp} />
+      <PublicHeader />
       <main className="content-shell">
         <div className="page-title">
           <h1>Estoque</h1>
@@ -42,6 +42,7 @@ export default async function EstoquePage({ searchParams }: { searchParams: Prom
           {vehicles.map((vehicle) => <VehicleCard key={vehicle.id} vehicle={vehicle} />)}
         </div>
       </main>
+      <PublicFooter />
     </>
   );
 }
