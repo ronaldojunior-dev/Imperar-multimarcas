@@ -5,12 +5,12 @@ export const INSTAGRAM_URL = "https://instagram.com/imperarmultimarcas";
 
 export const STORES = [
   {
-    name: "Loja 1",
-    address: "Rua Edelberto de Oliveira, nº 120"
+    name: "Loja Florianópolis",
+    address: "Rua Edelberto de Oliveira, nº 120 - Monte Cristo, Florianópolis - SC"
   },
   {
-    name: "Loja 2",
-    address: "Rua José Bonifácio de Souza, nº 193"
+    name: "Loja Palhoça",
+    address: "Rua José Bonifácio de Souza, nº 193 - Passa Vinte, Palhoça - SC"
   }
 ];
 

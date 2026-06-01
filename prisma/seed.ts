@@ -41,7 +41,7 @@ async function main() {
         phone: "(48) 99212-5373",
         whatsapp: "5548992125373",
         email: "contato@imperar.com.br",
-        address: "Loja 1: Rua Edelberto de Oliveira, nº 120 | Loja 2: Rua José Bonifácio de Souza, nº 193",
+        address: "Loja Florianópolis: Rua Edelberto de Oliveira, nº 120 - Monte Cristo | Loja Palhoça: Rua José Bonifácio de Souza, nº 193 - Passa Vinte",
         instagram: "https://instagram.com/imperarmultimarcas",
         facebook: "https://facebook.com",
         youtube: "https://youtube.com",
