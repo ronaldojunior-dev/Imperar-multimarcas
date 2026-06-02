@@ -441,8 +441,10 @@ select option:checked {
   padding: 8px 13px 7px;
   border: 1px solid #3a3a3a;
   border-radius: 4px;
-  color: #dfdfdf;
+  color: var(--red);
   font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
   background: #090909;
   transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
 }
